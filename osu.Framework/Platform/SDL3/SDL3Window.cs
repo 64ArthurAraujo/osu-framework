@@ -120,6 +120,16 @@ namespace osu.Framework.Platform.SDL3
             }
         }
 
+        public IntPtr GetX11WindowID()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IntPtr GetX11Display()
+        {
+            throw new NotImplementedException();
+        }
+
         [SupportedOSPlatform("linux")]
         public IntPtr DisplayHandle
         {

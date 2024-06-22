@@ -268,6 +268,40 @@ namespace osu.Framework.Platform.SDL2
             RunMainLoop();
         }
 
+        public IntPtr GetX11WindowID()
+        {
+            SDL_VERSION(out var version);
+
+            SDL_SysWMinfo info = new SDL_SysWMinfo
+            {
+                version = version
+            };
+
+            if (SDL_GetWindowWMInfo(SDLWindowHandle, ref info) == 0)
+            {
+                throw new InvalidOperationException($"Failed to get WindowManager info: {SDL_GetError()}");
+            }
+
+            return info.info.x11.window;
+        }
+
+        public IntPtr GetX11Display()
+        {
+            SDL_VERSION(out var version);
+
+            SDL_SysWMinfo info = new SDL_SysWMinfo
+            {
+                version = version
+            };
+
+            if (SDL_GetWindowWMInfo(SDLWindowHandle, ref info) == 0)
+            {
+                throw new InvalidOperationException($"Failed to get WindowManager info: {SDL_GetError()}");
+            }
+
+            return info.info.x11.display;
+        }
+
         /// <summary>
         /// Runs the main window loop.
         /// </summary>

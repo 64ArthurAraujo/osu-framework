@@ -218,6 +218,16 @@ namespace osu.Framework.Platform
         void Run();
 
         /// <summary>
+        /// Returns a pointer to the X11 window of this Window.
+        /// </summary>
+        IntPtr GetX11WindowID();
+
+        /// <summary>
+        /// Returns a pointer to the X11 display of this Window.
+        /// </summary>
+        IntPtr GetX11Display();
+
+        /// <summary>
         /// Invoked once a draw session has finished.
         /// </summary>
         void OnDraw();
