@@ -120,7 +120,7 @@ namespace osu.Framework.Platform.SDL3
             }
         }
 
-        public IntPtr GetX11WindowID()
+        public X11.Window GetX11WindowID()
         {
             throw new NotImplementedException();
         }

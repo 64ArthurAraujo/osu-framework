@@ -220,7 +220,7 @@ namespace osu.Framework.Platform
         /// <summary>
         /// Returns a pointer to the X11 window of this Window.
         /// </summary>
-        IntPtr GetX11WindowID();
+        X11.Window GetX11WindowID();
 
         /// <summary>
         /// Returns a pointer to the X11 display of this Window.

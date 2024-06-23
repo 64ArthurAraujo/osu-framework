@@ -268,7 +268,7 @@ namespace osu.Framework.Platform.SDL2
             RunMainLoop();
         }
 
-        public IntPtr GetX11WindowID()
+        public X11.Window GetX11WindowID()
         {
             SDL_VERSION(out var version);
 
@@ -282,7 +282,7 @@ namespace osu.Framework.Platform.SDL2
                 throw new InvalidOperationException($"Failed to get WindowManager info: {SDL_GetError()}");
             }
 
-            return info.info.x11.window;
+            return (X11.Window)info.info.x11.window;
         }
 
         public IntPtr GetX11Display()
